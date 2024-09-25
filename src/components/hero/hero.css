@@ -1,0 +1,132 @@
+.hero{
+    width: 100%;
+    height: 78vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.image-slider{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.image-slider img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    animation: fade-in 1s ease-in-out; 
+}
+.image-slider img.active {
+    opacity: 1;
+}
+
+.image-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(79, 74, 146, 0.616); 
+    filter: blur(5px); 
+    pointer-events: none; 
+    z-index: 1; 
+}
+
+.login-form {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: #a1c4fdb8;
+    padding: 20px;
+    border-radius: 8px;
+    color: #a7bcdb;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #005aa7;
+    color: #a1c4fd;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.create-profile-message {
+    margin-top: 15px;
+    text-align: center;
+    color: #041d30;
+}
+
+.create-profile-message a {
+    color: #e4ecf5;
+    text-decoration: none;
+}
+
+.create-profile-message a:hover {
+    text-decoration: underline; 
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; 
+    }
+
+    .login-form {
+        max-width: 90%; 
+        padding: 15px; 
+    }
+
+    button {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh; 
+    }
+
+    .login-form {
+        padding: 10px; 
+    }
+
+    input {
+        padding: 8px; 
+    }
+    button {
+        padding: 8px 10px; 
+    }
+}
